@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!in_array($ext, $allowed)) {
             $error = 'Разрешены только форматы: MP4, WebM, MOV, AVI';
         } 
-        // Проверка размера файла (100 МБ)
-        elseif ($_FILES['video']['size'] > 100 * 1024 * 1024) {
-            $error = 'Файл не должен превышать 100 МБ';
+        // Проверка размера файла (1 ГБ = 1073741824 байт)
+        elseif ($_FILES['video']['size'] > 1073741824) {
+            $error = 'Файл не должен превышать 1 ГБ (примерно 1 час видео)';
         } 
         else {
             // Создаем папку uploads, если её нет
@@ -109,9 +109,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .navbar {
-            background: rgba(255,255,255,0.95);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -124,9 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
         }
 
         .nav-links {
@@ -138,16 +136,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: white;
             transition: all 0.3s;
             padding: 0.5rem 1rem;
             border-radius: 25px;
         }
 
         .nav-links a:hover {
-            color: #667eea;
-            background: rgba(102,126,234,0.1);
+            color: white;
+            background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
+        }
+
+        .nav-links span {
+            color: white;
         }
 
         .btn {
@@ -161,14 +163,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .btn-outline {
-            border: 2px solid #667eea;
-            color: #667eea;
+            border: 2px solid white;
+            color: white;
             background: transparent;
         }
 
         .btn-outline:hover {
-            background: #667eea;
-            color: white;
+            background: white;
+            color: #333;
             transform: translateY(-2px);
         }
 
@@ -275,7 +277,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body>
-    <!-- Анимированные круги на фоне -->
     <div class="bg-circle" style="width: 300px; height: 300px; top: 10%; left: -100px; animation-duration: 25s;"></div>
     <div class="bg-circle" style="width: 200px; height: 200px; bottom: 20%; right: -50px; animation-duration: 30s;"></div>
     <div class="bg-circle" style="width: 400px; height: 400px; top: 50%; left: 70%; animation-duration: 20s;"></div>
@@ -307,7 +308,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Название видео *</label>
-                <input type="text" name="title" value="<?= htmlspecialchars($title ?? '') ?>" required placeholder="Например: Лабораторная работа №3">
+                <input type="text" name="title" value="<?= htmlspecialchars($title ?? '') ?>" required placeholder="Например: Лекция по программированию">
             </div>
             
             <div class="form-group">
@@ -320,7 +321,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="file" name="video" accept=".mp4,.webm,.mov,.avi" required>
                 <div class="info">
                     📌 Поддерживаемые форматы: MP4, WebM, MOV, AVI<br>
-                    📌 Максимальный размер: 100 МБ
+                    📌 Максимальный размер: 1 ГБ (примерно 1 час видео)
                 </div>
             </div>
             
