@@ -51,10 +51,11 @@ require_once 'config/database.php';
             50% { transform: translateY(-50px) rotate(180deg); }
         }
 
+        /* НАВИГАЦИЯ — ТЁМНЫЙ ФОН, БЕЛЫЙ ТЕКСТ */
         .navbar {
-            background: rgba(255,255,255,0.95);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -67,9 +68,7 @@ require_once 'config/database.php';
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
         }
 
         .nav-links {
@@ -79,18 +78,26 @@ require_once 'config/database.php';
             flex-wrap: wrap;
         }
 
+        /* Ссылки в навигации — БЕЛЫЙ ТЕКСТ */
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: white;
             transition: all 0.3s;
             padding: 0.5rem 1rem;
             border-radius: 25px;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            color: #667eea;
-            background: rgba(102,126,234,0.1);
+            color: white;
+            background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
+        }
+
+        /* Имя пользователя — БЕЛЫЙ ТЕКСТ */
+        .nav-links span {
+            color: white;
+            font-weight: 500;
         }
 
         .btn {
@@ -101,6 +108,7 @@ require_once 'config/database.php';
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+            font-weight: 500;
         }
 
         .btn-primary {
@@ -113,15 +121,16 @@ require_once 'config/database.php';
             box-shadow: 0 5px 20px rgba(102,126,234,0.4);
         }
 
+        /* Кнопка "Вход" и "Выйти" — белая рамка, белый текст */
         .btn-outline {
-            border: 2px solid #667eea;
-            color: #667eea;
+            border: 2px solid white;
+            color: white;
             background: transparent;
         }
 
         .btn-outline:hover {
-            background: #667eea;
-            color: white;
+            background: white;
+            color: #333;
             transform: translateY(-2px);
         }
 
