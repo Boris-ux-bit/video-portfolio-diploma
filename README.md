@@ -17,7 +17,7 @@
 - **База данных:** MySQL
 - **Frontend:** HTML5, CSS3, JavaScript
 - **Интерактивность:** AJAX (Fetch API)
-- **Сервер:** MAMP (Apache, MySQL)
+- **Сервер:** XAMPP
 
 # Структура проекта
 
@@ -36,13 +36,12 @@ video_portfolio/
 ├── upload.php                # Загрузка видео
 ├── watch.php                 # Просмотр видео
 ├── profile.php               # Личный кабинет
-└── admin/
-    └── users.php             # Управление пользователями (админка)
-
+└── users.php                 # Управление пользователями (админка)
+            
 # Установка и запуск
 
 1. Установите MAMP (или OpenServer/XAMPP)
 2. Скопируйте папку `video_portfolio` в `htdocs`
-3. Импортируйте базу данных из файла `database.sql` (см. раздел 2.1 диплома)
+3. Импортируйте базу данных из файла 
 4. Настройте подключение к БД в `config/database.php` (порт 8889 для MySQL в MAMP)
-5. Откройте в браузере: `http://localhost:8888/video_portfolio/`
+5. Откройте в браузере: `http://localhost/video_portfolio/`
