@@ -43,5 +43,5 @@ video_portfolio/
 1. Установите MAMP (или OpenServer/XAMPP)
 2. Скопируйте папку `video_portfolio` в `htdocs`
 3. Импортируйте базу данных из файла 
-4. Настройте подключение к БД в `config/database.php` (порт 8889 для MySQL в MAMP)
+4. Настройте подключение к БД в `config/database.php` (порт 3306 для MySQL в XAMPP)
 5. Откройте в браузере: `http://localhost/video_portfolio/`
