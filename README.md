@@ -15,7 +15,7 @@
 # Технологии
 - **Backend:** PHP
 - **База данных:** MySQL
-- **Frontend:** HTML5, CSS3, JavaScript
+- **Frontend:** HTML5, CSS3,
 - **Интерактивность:** PHP
 - **Сервер:** XAMPP
 
@@ -24,7 +24,7 @@
 video_portfolio/
 ├── config/
 │   └── database.php          # Подключение к БД и сессии
-├── api/                      # API-эндпоинты для AJAX
+├── api/                      # API
 │   ├── get_videos.php        # Получение списка видео
 │   ├── toggle_like.php       # Постановка/снятие лайка
 │   └── add_comment.php       # Добавление комментария
