@@ -58,6 +58,20 @@ CREATE TABLE IF NOT EXISTS likes (
 
 
 
+CREATE TABLE IF NOT EXISTS grades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    video_id INT NOT NULL,
+    score INT NOT NULL CHECK (score BETWEEN 1 AND 5),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_user_video (user_id, video_id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (video_id) REFERENCES videos(id) ON DELETE CASCADE
+);
+
+
+
+
 INSERT IGNORE INTO users (username, email, password, role) 
 VALUES (
     'admin',
